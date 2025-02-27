@@ -1,0 +1,12 @@
+.vscode/
+bin/
+
+.DS_Store
+*.txt
+*.out
+*.log
+
+!*.c
+!*.h
+!*.java
+!*.go
