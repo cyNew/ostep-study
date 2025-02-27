@@ -1,12 +1,18 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include "common.h"
 
 int main(int argc, char *argv[]) {
-    printf("location of code : %p\n", (void *)main);
-    printf("location of heap : %p\n", (void *)malloc(1));
-
-    int x = 3;
-    printf("location of stack : %p\n", &x);
-
-    return x;
+    int *p = malloc(sizeof(int));
+    assert(p != NULL);
+    printf("(%d) memory address of p: %08x\n", getpid(), (unsigned) p);
+    *p = 0;
+    while (1) {
+        Spin(1);
+        *p = *p + 1;
+        printf("(%d) p: %d\n", getpid(), *p);
+    }
+    free(p);
 }
