@@ -6,5 +6,5 @@ PointerAlignment: Right
 AllowShortBlocksOnASingleLine: Never
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
-AlignTrailingComments: Always
+AlignTrailingComments: true
 IncludeBlocks: Regroup
